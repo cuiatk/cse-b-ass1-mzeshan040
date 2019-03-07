@@ -69,9 +69,12 @@ int integerNoOfSides = 0;
      * @param sideLength length of each side
      */
     public static void drawRegularPolygon(Turtle turtle, int sides, int sideLength) {
+    	
     	for (int i=sides;i>0;i--){
     		turtle.forward(sideLength);
    		 	turtle.turn(180.0 - calculateRegularPolygonAngle(sides));
+    	}
+    	
     }
 
     /**
@@ -138,7 +141,19 @@ int integerNoOfSides = 0;
      * @param turtle the turtle context
      */
     public static void drawPersonalArt(Turtle turtle) {
-        throw new RuntimeException("implement me!");
+     	int sides = 6;
+    	int sideLength = 90;
+    	
+    	for(int x = sides; x > 0; x--){
+    		
+    		for(int y = 30; y>0; y-=10){
+    			drawRegularPolygon(turtle, 5, y);
+    		}
+    		
+    		drawRegularPolygon(turtle, 6, 50);
+    		turtle.forward(sideLength);
+    		turtle.turn(180.0 - calculateRegularPolygonAngle(sides));
+    	}
     }
 
     /**
